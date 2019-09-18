@@ -21,3 +21,12 @@ Import & Visualize the Data
  ![screencapture-127-0-0-1-8000-Leaflet-Step-1-2019-09-17-19_15_06](https://user-images.githubusercontent.com/49598347/65088636-c0c94280-d97f-11e9-9fe8-a6fdcca51302.png)
 
 
+The USGS wants to plot a second data set on our map to illustrate the relationship between tectonic plates and seismic activity.
+ Step we are going to..
+ 1.Plot a second data set on our map.
+
+ 2.Add a number of base maps to choose from as well as separate out our two different data sets into overlays that can be turned on and off    independently.
+
+ 3.Add layer controls to our map.
+ 
+ 
