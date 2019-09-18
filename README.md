@@ -28,6 +28,4 @@ The USGS wants to plot a second data set on our map to illustrate the relationsh
 
  3.Add layer controls to our map.
  
- ![screencapture-127-0-0-1-8000-Leaflet-Step-2-2019-09-17-20_12_25](https://user-images.githubusercontent.com/49598347/65096401-83b67d80-d98a-11e9-9945-8ea1cabb0068.png)
- 
- 
+ ![screencapture-127-0-0-1-8000-Leaflet-Step-2-2019-09-17-20_45_30](https://user-images.githubusercontent.com/49598347/65097759-684c7200-d98c-11e9-98c9-df938308c26b.png)
