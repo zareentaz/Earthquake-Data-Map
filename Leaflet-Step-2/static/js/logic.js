@@ -84,6 +84,8 @@ function createMap(earthquakes) {
       accessToken: API_KEY
   });
 
+// Create the faultline layer
+var faultLine = new L.LayerGroup();
 
 // Define a baseMaps object to hold our base layers
 var baseMaps = {
@@ -96,8 +98,8 @@ var baseMaps = {
 
 // Create overlay object to hold our overlay layer
 var overlayMaps = {
-  Earthquakes: earthquakes
-  
+  Earthquakes: earthquakes,
+  FaultLines: faultLine
 };
 
 // Create our map, giving it the streetmap and earthquakes layers to display on load
@@ -106,7 +108,7 @@ var myMap = L.map("map", {
     37.09, -95.71
   ],
   zoom: 4,
-  layers: [grayscalemap,satellitemap,outdoorsmap,earthquakes]
+  layers: [grayscalemap,satellitemap,outdoorsmap,earthquakes,faultLine]
 });
 
 // Create a layer control
@@ -114,6 +116,19 @@ var myMap = L.map("map", {
   L.control.layers(baseMaps, overlayMaps, {
     collapsed: false
   }).addTo(myMap);
+
+
+  // Query to retrieve the faultline data
+  var faultlinequery = "https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_plates.json";
+  
+  // Create the faultlines and add them to the faultline layer
+  d3.json(faultlinequery, function(data) {
+    L.geoJSON(data, {
+      style: function() {
+        return {color: "orange", fillOpacity: 0}
+      }
+    }).addTo(faultLine)
+  })
 
 
   function getColor(d) {
